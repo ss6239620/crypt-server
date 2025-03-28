@@ -1,0 +1,10 @@
+{
+    "C_Cpp.default.compilerPath": "",
+    "files.associations": {
+        "iostream": "cpp",
+        "semaphore": "cpp",
+        "string": "cpp",
+        "*.tcc": "cpp",
+        "ostream": "cpp"
+    }
+}
