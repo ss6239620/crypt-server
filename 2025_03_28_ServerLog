@@ -1,0 +1,384 @@
+2025-03-28 10:51:14.896661 [info]:timer tick
+2025-03-28 10:51:17.503563 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:17.503902 [info]:adjust timer once.
+2025-03-28 10:51:17.504086 [info]:GET / HTTP/1.1
+2025-03-28 10:51:17.504180 [info]:Host: localhost:9906
+2025-03-28 10:51:17.504216 [info]:Connection: keep-alive
+2025-03-28 10:51:17.504244 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:17.504267 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:17.504292 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:17.504312 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:17.504334 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:17.504354 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:17.504376 [info]:Upgrade-Insecure-Requests: 1
+2025-03-28 10:51:17.504396 [info]:Oops!! Unknown header: Upgrade-Insecure-Requests: 1.
+2025-03-28 10:51:17.504418 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:17.504440 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:17.504465 [info]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2025-03-28 10:51:17.504488 [info]:Oops!! Unknown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7.
+2025-03-28 10:51:17.504525 [info]:Sec-Fetch-Site: none
+2025-03-28 10:51:17.504546 [info]:Oops!! Unknown header: Sec-Fetch-Site: none.
+2025-03-28 10:51:17.504561 [info]:Sec-Fetch-Mode: navigate
+2025-03-28 10:51:17.504575 [info]:Oops!! Unknown header: Sec-Fetch-Mode: navigate.
+2025-03-28 10:51:17.504588 [info]:Sec-Fetch-User: ?1
+2025-03-28 10:51:17.504601 [info]:Oops!! Unknown header: Sec-Fetch-User: ?1.
+2025-03-28 10:51:17.504615 [info]:Sec-Fetch-Dest: document
+2025-03-28 10:51:17.504629 [info]:Oops!! Unknown header: Sec-Fetch-Dest: document.
+2025-03-28 10:51:17.504643 [info]:Accept-Encoding: gzip, deflate, br, zstd
+2025-03-28 10:51:17.504656 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br, zstd.
+2025-03-28 10:51:17.504671 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:17.504684 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:17.504698 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:17.504711 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:17.504725 [info]:
+2025-03-28 10:51:17.504778 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:17.504796 [info]:request: HTTP/1.1 200 OK
+Content-Length:577
+
+2025-03-28 10:51:17.504810 [info]:request: HTTP/1.1 200 OK
+Content-Length:577
+Connection:keep-alive
+
+2025-03-28 10:51:17.504824 [info]:request: HTTP/1.1 200 OK
+Content-Length:577
+Connection:keep-alive
+
+
+2025-03-28 10:51:17.505237 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:17.505449 [info]:adjust timer once.
+2025-03-28 10:51:19.329560 [info]:close fd 17
+2025-03-28 10:51:19.329991 [info]:close fd 18
+2025-03-28 10:51:19.330102 [info]:close fd 16
+2025-03-28 10:51:19.897793 [info]:timer tick
+2025-03-28 10:51:20.755402 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:20.755642 [info]:adjust timer once.
+2025-03-28 10:51:20.755754 [info]:POST /1 HTTP/1.1
+2025-03-28 10:51:20.755820 [info]:Host: localhost:9906
+2025-03-28 10:51:20.755845 [info]:Connection: keep-alive
+2025-03-28 10:51:20.755862 [info]:Content-Length: 0
+2025-03-28 10:51:20.755880 [info]:Cache-Control: max-age=0
+2025-03-28 10:51:20.755896 [info]:Oops!! Unknown header: Cache-Control: max-age=0.
+2025-03-28 10:51:20.755914 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:20.755930 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:20.755971 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:20.755991 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:20.756008 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:20.756023 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:20.756039 [info]:Origin: http://localhost:9906
+2025-03-28 10:51:20.756054 [info]:Oops!! Unknown header: Origin: http://localhost:9906.
+2025-03-28 10:51:20.756073 [info]:Content-Type: application/x-www-form-urlencoded
+2025-03-28 10:51:20.756089 [info]:Oops!! Unknown header: Content-Type: application/x-www-form-urlencoded.
+2025-03-28 10:51:20.756101 [info]:Upgrade-Insecure-Requests: 1
+2025-03-28 10:51:20.756110 [info]:Oops!! Unknown header: Upgrade-Insecure-Requests: 1.
+2025-03-28 10:51:20.756121 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:20.756132 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:20.756143 [info]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2025-03-28 10:51:20.756153 [info]:Oops!! Unknown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7.
+2025-03-28 10:51:20.756185 [info]:Sec-Fetch-Site: same-origin
+2025-03-28 10:51:20.756208 [info]:Oops!! Unknown header: Sec-Fetch-Site: same-origin.
+2025-03-28 10:51:20.756229 [info]:Sec-Fetch-Mode: navigate
+2025-03-28 10:51:20.756243 [info]:Oops!! Unknown header: Sec-Fetch-Mode: navigate.
+2025-03-28 10:51:20.756253 [info]:Sec-Fetch-User: ?1
+2025-03-28 10:51:20.756264 [info]:Oops!! Unknown header: Sec-Fetch-User: ?1.
+2025-03-28 10:51:20.756275 [info]:Sec-Fetch-Dest: document
+2025-03-28 10:51:20.756285 [info]:Oops!! Unknown header: Sec-Fetch-Dest: document.
+2025-03-28 10:51:20.756296 [info]:Referer: http://localhost:9906/
+2025-03-28 10:51:20.756306 [info]:Oops!! Unknown header: Referer: http://localhost:9906/.
+2025-03-28 10:51:20.756319 [info]:Accept-Encoding: gzip, deflate, br, zstd
+2025-03-28 10:51:20.756330 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br, zstd.
+2025-03-28 10:51:20.756341 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:20.756352 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:20.756363 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:20.756373 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:20.756384 [info]:
+2025-03-28 10:51:20.756444 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:20.756462 [info]:request: HTTP/1.1 200 OK
+Content-Length:716
+
+2025-03-28 10:51:20.756474 [info]:request: HTTP/1.1 200 OK
+Content-Length:716
+Connection:keep-alive
+
+2025-03-28 10:51:20.756484 [info]:request: HTTP/1.1 200 OK
+Content-Length:716
+Connection:keep-alive
+
+
+2025-03-28 10:51:20.757018 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:20.757234 [info]:adjust timer once.
+2025-03-28 10:51:24.899543 [info]:timer tick
+2025-03-28 10:51:27.012827 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:27.013128 [info]:adjust timer once.
+2025-03-28 10:51:27.013243 [info]:POST /2CGISQL.cgi HTTP/1.1
+2025-03-28 10:51:27.013315 [info]:Host: localhost:9906
+2025-03-28 10:51:27.013340 [info]:Connection: keep-alive
+2025-03-28 10:51:27.013357 [info]:Content-Length: 23
+2025-03-28 10:51:27.013374 [info]:Cache-Control: max-age=0
+2025-03-28 10:51:27.013389 [info]:Oops!! Unknown header: Cache-Control: max-age=0.
+2025-03-28 10:51:27.013483 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:27.013504 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:27.013522 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:27.013560 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:27.013578 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:27.013593 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:27.013609 [info]:Origin: http://localhost:9906
+2025-03-28 10:51:27.013625 [info]:Oops!! Unknown header: Origin: http://localhost:9906.
+2025-03-28 10:51:27.013642 [info]:Content-Type: application/x-www-form-urlencoded
+2025-03-28 10:51:27.013657 [info]:Oops!! Unknown header: Content-Type: application/x-www-form-urlencoded.
+2025-03-28 10:51:27.013673 [info]:Upgrade-Insecure-Requests: 1
+2025-03-28 10:51:27.013688 [info]:Oops!! Unknown header: Upgrade-Insecure-Requests: 1.
+2025-03-28 10:51:27.013705 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:27.013721 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:27.013739 [info]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2025-03-28 10:51:27.013755 [info]:Oops!! Unknown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7.
+2025-03-28 10:51:27.013782 [info]:Sec-Fetch-Site: same-origin
+2025-03-28 10:51:27.013799 [info]:Oops!! Unknown header: Sec-Fetch-Site: same-origin.
+2025-03-28 10:51:27.013814 [info]:Sec-Fetch-Mode: navigate
+2025-03-28 10:51:27.013829 [info]:Oops!! Unknown header: Sec-Fetch-Mode: navigate.
+2025-03-28 10:51:27.013844 [info]:Sec-Fetch-User: ?1
+2025-03-28 10:51:27.013858 [info]:Oops!! Unknown header: Sec-Fetch-User: ?1.
+2025-03-28 10:51:27.013872 [info]:Sec-Fetch-Dest: document
+2025-03-28 10:51:27.013886 [info]:Oops!! Unknown header: Sec-Fetch-Dest: document.
+2025-03-28 10:51:27.013900 [info]:Referer: http://localhost:9906/1
+2025-03-28 10:51:27.013915 [info]:Oops!! Unknown header: Referer: http://localhost:9906/1.
+2025-03-28 10:51:27.013930 [info]:Accept-Encoding: gzip, deflate, br, zstd
+2025-03-28 10:51:27.013946 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br, zstd.
+2025-03-28 10:51:27.013961 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:27.013975 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:27.013989 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:27.014004 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:27.014019 [info]:
+2025-03-28 10:51:27.014035 [info]:user=ss123&password=123
+2025-03-28 10:51:27.014099 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:27.014120 [info]:request: HTTP/1.1 200 OK
+Content-Length:722
+
+2025-03-28 10:51:27.014137 [info]:request: HTTP/1.1 200 OK
+Content-Length:722
+Connection:keep-alive
+
+2025-03-28 10:51:27.014153 [info]:request: HTTP/1.1 200 OK
+Content-Length:722
+Connection:keep-alive
+
+
+2025-03-28 10:51:27.014650 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:27.014770 [info]:adjust timer once.
+2025-03-28 10:51:28.578994 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:28.579370 [info]:adjust timer once.
+2025-03-28 10:51:28.579492 [info]:POST /6 HTTP/1.1
+2025-03-28 10:51:28.579558 [info]:Host: localhost:9906
+2025-03-28 10:51:28.579578 [info]:Connection: keep-alive
+2025-03-28 10:51:28.579592 [info]:Content-Length: 0
+2025-03-28 10:51:28.579606 [info]:Cache-Control: max-age=0
+2025-03-28 10:51:28.579619 [info]:Oops!! Unknown header: Cache-Control: max-age=0.
+2025-03-28 10:51:28.579634 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:28.579648 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:28.579662 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:28.579676 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:28.579725 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:28.579750 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:28.579772 [info]:Origin: http://localhost:9906
+2025-03-28 10:51:28.579789 [info]:Oops!! Unknown header: Origin: http://localhost:9906.
+2025-03-28 10:51:28.579803 [info]:Content-Type: application/x-www-form-urlencoded
+2025-03-28 10:51:28.579816 [info]:Oops!! Unknown header: Content-Type: application/x-www-form-urlencoded.
+2025-03-28 10:51:28.579830 [info]:Upgrade-Insecure-Requests: 1
+2025-03-28 10:51:28.579843 [info]:Oops!! Unknown header: Upgrade-Insecure-Requests: 1.
+2025-03-28 10:51:28.579857 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:28.579871 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:28.579886 [info]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2025-03-28 10:51:28.579900 [info]:Oops!! Unknown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7.
+2025-03-28 10:51:28.579923 [info]:Sec-Fetch-Site: same-origin
+2025-03-28 10:51:28.579936 [info]:Oops!! Unknown header: Sec-Fetch-Site: same-origin.
+2025-03-28 10:51:28.579949 [info]:Sec-Fetch-Mode: navigate
+2025-03-28 10:51:28.579963 [info]:Oops!! Unknown header: Sec-Fetch-Mode: navigate.
+2025-03-28 10:51:28.579976 [info]:Sec-Fetch-User: ?1
+2025-03-28 10:51:28.579989 [info]:Oops!! Unknown header: Sec-Fetch-User: ?1.
+2025-03-28 10:51:28.580002 [info]:Sec-Fetch-Dest: document
+2025-03-28 10:51:28.580015 [info]:Oops!! Unknown header: Sec-Fetch-Dest: document.
+2025-03-28 10:51:28.580028 [info]:Referer: http://localhost:9906/2CGISQL.cgi
+2025-03-28 10:51:28.580041 [info]:Oops!! Unknown header: Referer: http://localhost:9906/2CGISQL.cgi.
+2025-03-28 10:51:28.580054 [info]:Accept-Encoding: gzip, deflate, br, zstd
+2025-03-28 10:51:28.580067 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br, zstd.
+2025-03-28 10:51:28.580081 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:28.580093 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:28.580106 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:28.580121 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:28.580134 [info]:
+2025-03-28 10:51:28.580185 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:28.580202 [info]:request: HTTP/1.1 200 OK
+Content-Length:393
+
+2025-03-28 10:51:28.580216 [info]:request: HTTP/1.1 200 OK
+Content-Length:393
+Connection:keep-alive
+
+2025-03-28 10:51:28.580229 [info]:request: HTTP/1.1 200 OK
+Content-Length:393
+Connection:keep-alive
+
+
+2025-03-28 10:51:28.580755 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:28.580925 [info]:adjust timer once.
+2025-03-28 10:51:28.704315 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:28.704711 [info]:adjust timer once.
+2025-03-28 10:51:28.704844 [info]:GET /xxx.mp4 HTTP/1.1
+2025-03-28 10:51:28.704940 [info]:Host: localhost:9906
+2025-03-28 10:51:28.704977 [info]:Connection: keep-alive
+2025-03-28 10:51:28.705003 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:28.705024 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:28.705047 [info]:Accept-Encoding: identity;q=1, *;q=0
+2025-03-28 10:51:28.705071 [info]:Oops!! Unknown header: Accept-Encoding: identity;q=1, *;q=0.
+2025-03-28 10:51:28.705094 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:28.705117 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:28.705170 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:28.705196 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:28.705220 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:28.705241 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:28.705263 [info]:Accept: */*
+2025-03-28 10:51:28.705283 [info]:Oops!! Unknown header: Accept: */*.
+2025-03-28 10:51:28.705304 [info]:Sec-Fetch-Site: same-origin
+2025-03-28 10:51:28.705471 [info]:Oops!! Unknown header: Sec-Fetch-Site: same-origin.
+2025-03-28 10:51:28.705517 [info]:Sec-Fetch-Mode: no-cors
+2025-03-28 10:51:28.705543 [info]:Oops!! Unknown header: Sec-Fetch-Mode: no-cors.
+2025-03-28 10:51:28.705566 [info]:Sec-Fetch-Dest: video
+2025-03-28 10:51:28.705583 [info]:Oops!! Unknown header: Sec-Fetch-Dest: video.
+2025-03-28 10:51:28.705596 [info]:Referer: http://localhost:9906/6
+2025-03-28 10:51:28.705610 [info]:Oops!! Unknown header: Referer: http://localhost:9906/6.
+2025-03-28 10:51:28.705623 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:28.705636 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:28.705649 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:28.705662 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:28.705674 [info]:Range: bytes=0-
+2025-03-28 10:51:28.705687 [info]:Oops!! Unknown header: Range: bytes=0-.
+2025-03-28 10:51:28.705700 [info]:
+2025-03-28 10:51:28.705752 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:28.705769 [info]:request: HTTP/1.1 200 OK
+Content-Length:39667571
+
+2025-03-28 10:51:28.705783 [info]:request: HTTP/1.1 200 OK
+Content-Length:39667571
+Connection:keep-alive
+
+2025-03-28 10:51:28.705796 [info]:request: HTTP/1.1 200 OK
+Content-Length:39667571
+Connection:keep-alive
+
+
+2025-03-28 10:51:28.913996 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:28.914245 [info]:adjust timer once.
+2025-03-28 10:51:29.267774 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:29.268015 [info]:adjust timer once.
+2025-03-28 10:51:29.268238 [info]:close fd 17
+2025-03-28 10:51:29.268404 [info]:close fd 18
+2025-03-28 10:51:29.899888 [info]:timer tick
+2025-03-28 10:51:30.354818 [info]:close fd 16
+2025-03-28 10:51:31.958390 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:31.958801 [info]:adjust timer once.
+2025-03-28 10:51:31.958970 [info]:POST /7 HTTP/1.1
+2025-03-28 10:51:31.959054 [info]:Host: localhost:9906
+2025-03-28 10:51:31.959090 [info]:Connection: keep-alive
+2025-03-28 10:51:31.959116 [info]:Content-Length: 0
+2025-03-28 10:51:31.959141 [info]:Cache-Control: max-age=0
+2025-03-28 10:51:31.959164 [info]:Oops!! Unknown header: Cache-Control: max-age=0.
+2025-03-28 10:51:31.959187 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:31.959208 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:31.959230 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:31.959250 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:31.959272 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:31.959295 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:31.959316 [info]:Origin: http://localhost:9906
+2025-03-28 10:51:31.959336 [info]:Oops!! Unknown header: Origin: http://localhost:9906.
+2025-03-28 10:51:31.959359 [info]:Content-Type: application/x-www-form-urlencoded
+2025-03-28 10:51:31.959379 [info]:Oops!! Unknown header: Content-Type: application/x-www-form-urlencoded.
+2025-03-28 10:51:31.959401 [info]:Upgrade-Insecure-Requests: 1
+2025-03-28 10:51:31.959423 [info]:Oops!! Unknown header: Upgrade-Insecure-Requests: 1.
+2025-03-28 10:51:31.959446 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:31.959467 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:31.959521 [info]:Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+2025-03-28 10:51:31.959545 [info]:Oops!! Unknown header: Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7.
+2025-03-28 10:51:31.959661 [info]:Sec-Fetch-Site: same-origin
+2025-03-28 10:51:31.959688 [info]:Oops!! Unknown header: Sec-Fetch-Site: same-origin.
+2025-03-28 10:51:31.959709 [info]:Sec-Fetch-Mode: navigate
+2025-03-28 10:51:31.959730 [info]:Oops!! Unknown header: Sec-Fetch-Mode: navigate.
+2025-03-28 10:51:31.959753 [info]:Sec-Fetch-User: ?1
+2025-03-28 10:51:31.959774 [info]:Oops!! Unknown header: Sec-Fetch-User: ?1.
+2025-03-28 10:51:31.959795 [info]:Sec-Fetch-Dest: document
+2025-03-28 10:51:31.959815 [info]:Oops!! Unknown header: Sec-Fetch-Dest: document.
+2025-03-28 10:51:31.959836 [info]:Referer: http://localhost:9906/2CGISQL.cgi
+2025-03-28 10:51:31.959857 [info]:Oops!! Unknown header: Referer: http://localhost:9906/2CGISQL.cgi.
+2025-03-28 10:51:31.959880 [info]:Accept-Encoding: gzip, deflate, br, zstd
+2025-03-28 10:51:31.959901 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br, zstd.
+2025-03-28 10:51:31.959922 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:31.959942 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:31.959963 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:31.959984 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:31.960006 [info]:
+2025-03-28 10:51:31.960072 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:31.960097 [info]:request: HTTP/1.1 200 OK
+Content-Length:392
+
+2025-03-28 10:51:31.960120 [info]:request: HTTP/1.1 200 OK
+Content-Length:392
+Connection:keep-alive
+
+2025-03-28 10:51:31.960140 [info]:request: HTTP/1.1 200 OK
+Content-Length:392
+Connection:keep-alive
+
+
+2025-03-28 10:51:31.960768 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:31.960936 [info]:adjust timer once.
+2025-03-28 10:51:32.012191 [info]:deal with the client(127.0.0.1)
+2025-03-28 10:51:32.012510 [info]:adjust timer once.
+2025-03-28 10:51:32.012764 [info]:GET /test1.jpg HTTP/1.1
+2025-03-28 10:51:32.012918 [info]:Host: localhost:9906
+2025-03-28 10:51:32.012956 [info]:Connection: keep-alive
+2025-03-28 10:51:32.012983 [info]:sec-ch-ua-platform: "Windows"
+2025-03-28 10:51:32.013006 [info]:Oops!! Unknown header: sec-ch-ua-platform: "Windows".
+2025-03-28 10:51:32.013032 [info]:User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36
+2025-03-28 10:51:32.013057 [info]:Oops!! Unknown header: User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36.
+2025-03-28 10:51:32.013088 [info]:sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134"
+2025-03-28 10:51:32.013118 [info]:Oops!! Unknown header: sec-ch-ua: "Chromium";v="134", "Not:A-Brand";v="24", "Google Chrome";v="134".
+2025-03-28 10:51:32.013149 [info]:sec-ch-ua-mobile: ?0
+2025-03-28 10:51:32.013177 [info]:Oops!! Unknown header: sec-ch-ua-mobile: ?0.
+2025-03-28 10:51:32.013208 [info]:Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+2025-03-28 10:51:32.013238 [info]:Oops!! Unknown header: Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8.
+2025-03-28 10:51:32.013266 [info]:Sec-Fetch-Site: same-origin
+2025-03-28 10:51:32.013295 [info]:Oops!! Unknown header: Sec-Fetch-Site: same-origin.
+2025-03-28 10:51:32.013322 [info]:Sec-Fetch-Mode: no-cors
+2025-03-28 10:51:32.013348 [info]:Oops!! Unknown header: Sec-Fetch-Mode: no-cors.
+2025-03-28 10:51:32.013387 [info]:Sec-Fetch-Dest: image
+2025-03-28 10:51:32.013421 [info]:Oops!! Unknown header: Sec-Fetch-Dest: image.
+2025-03-28 10:51:32.013452 [info]:Referer: http://localhost:9906/7
+2025-03-28 10:51:32.013549 [info]:Oops!! Unknown header: Referer: http://localhost:9906/7.
+2025-03-28 10:51:32.013583 [info]:Accept-Encoding: gzip, deflate, br, zstd
+2025-03-28 10:51:32.013617 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br, zstd.
+2025-03-28 10:51:32.013647 [info]:Accept-Language: en-US,en;q=0.9
+2025-03-28 10:51:32.013668 [info]:Oops!! Unknown header: Accept-Language: en-US,en;q=0.9.
+2025-03-28 10:51:32.013691 [info]:Cookie: _ga=GA1.1.265103158.1734336241
+2025-03-28 10:51:32.013714 [info]:Oops!! Unknown header: Cookie: _ga=GA1.1.265103158.1734336241.
+2025-03-28 10:51:32.013735 [info]:
+2025-03-28 10:51:32.013822 [info]:request: HTTP/1.1 200 OK
+
+2025-03-28 10:51:32.013856 [info]:request: HTTP/1.1 200 OK
+Content-Length:78443
+
+2025-03-28 10:51:32.013880 [info]:request: HTTP/1.1 200 OK
+Content-Length:78443
+Connection:keep-alive
+
+2025-03-28 10:51:32.013928 [info]:request: HTTP/1.1 200 OK
+Content-Length:78443
+Connection:keep-alive
+
+
+2025-03-28 10:51:32.015189 [info]:send data to the client(127.0.0.1)
+2025-03-28 10:51:32.015528 [info]:adjust timer once.
+2025-03-28 10:51:34.900229 [info]:timer tick
