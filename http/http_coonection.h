@@ -26,6 +26,7 @@
 #include "../cgi_mysql/connection_pool.h"
 #include "../timer/timer.h"
 #include "../log/log.h"
+#include "http_types.h"
 
 /**
  * @class HTTP_CONN
@@ -40,23 +41,6 @@ public:
     static const int FILENAME_LEN = 200;       ///< Maximum length for file paths
     static const int READ_BUFFER_SIZE = 2048;  ///< Size of read buffer
     static const int WRITE_BUFFER_SIZE = 1024; ///< Size of write buffer
-
-    /**
-     * @enum METHOD
-     * @brief Supported HTTP methods
-     */
-    enum METHOD
-    {
-        GET = 0, ///< HTTP GET method
-        POST,    ///< HTTP POST method
-        HEAD,    ///< HTTP HEAD method
-        PUT,     ///< HTTP PUT method
-        DELETE,  ///< HTTP DELETE method
-        TRACE,   ///< HTTP TRACE method
-        OPTIONS, ///< HTTP OPTIONS method
-        CONNECT, ///< HTTP CONNECT method
-        PATH     ///< PATH method
-    };
 
     /**
      * @enum CHECK_STATE
@@ -88,7 +72,7 @@ public:
     /**
      * @enum LINE_STATUS
      * @brief Request line parsing status
-    */
+     */
     enum LINE_STATUS
     {
         LINE_OK = 0, ///< Line parsed successfully
@@ -152,7 +136,7 @@ public:
      */
     sockaddr_in *get_address()
     {
-        return &m_address;
+        return &req.m_address;
     }
 
     /**
@@ -165,52 +149,25 @@ public:
     int improv;     ///< Improv flag for connection state
 
 private:
-    /* Connection data */
-    int m_sockfd;                        ///< Client socket descriptor
-    sockaddr_in m_address;               ///< Client address
-    char m_read_buf[READ_BUFFER_SIZE];   ///< Read buffer
-    long m_read_idx;                     ///< Read buffer index
-    long m_checked_idx;                  ///< Checked position in buffer
-    int m_start_line;                    ///< Start line position
-    char m_write_buf[WRITE_BUFFER_SIZE]; ///< Write buffer
-    int m_write_idx;                     ///< Write buffer index
-
     /* Parser state */
-    CHECK_STATE m_check_state;      ///< Current parsing state
-    METHOD m_method;                ///< HTTP method
-    char m_real_file[FILENAME_LEN]; ///< Requested file path
-    char *m_url;                    ///< Request URL
-    char *m_version;                ///< HTTP version
-    char *m_host;                   ///< Host header
-    long m_content_length;          ///< Content length
-    bool m_linger;                  ///< Keep-alive flag
-
-    /* File handling */
-    char *m_file_address;    ///< Mapped file address
-    struct stat m_file_stat; ///< File status
-    struct iovec m_iv[2];    ///< I/O vector for writev
-    int m_iv_count;          ///< I/O vector count
-
-    /* CGI and database */
-    int cgi;             ///< CGI flag
-    char *m_string;      ///< String storage
-    int bytes_to_send;   ///< Bytes remaining to send
-    int bytes_have_send; ///< Bytes already sent
+    CHECK_STATE m_check_state; ///< Current parsing state
+    int cgi;                   ///< CGI flag
 
     /* Configuration */
-    char *doc_root;              ///< Document root directory
     map<string, string> m_users; ///< User credentials cache
     int m_trigger_mode;          ///< Event trigger mode
-    int m_close_log;             ///< Logging control flag
 
     /* Database credentials */
     char sql_user[100];     ///< Database username
     char sql_password[100]; ///< Database password
     char sql_name[100];     ///< Database name
 
+    HttpRequest req;
+    HttpResponse res;
+
 private:
     /*Private Function*/
-
+    
     void init(); ///< Internal initialization
 
     /**
@@ -219,17 +176,9 @@ private:
      */
     HTTP_CODE process_read();
 
-    /**
-     * @brief Process write operation
-     * @param ret HTTP_CODE from process_read
-     * @return true if write should continue, false otherwise
-     */
-    bool process_write(HTTP_CODE ret);
-
     HTTP_CODE parse_request_line(char *text); ///< Parse request line
     HTTP_CODE parse_headers(char *text);      ///< Parse headers
     HTTP_CODE parse_content(char *text);      ///< Parse content
-    HTTP_CODE do_request();                   ///< Handle valid request
 
     /**
      * @brief Get current line from buffer
@@ -237,7 +186,7 @@ private:
      */
     char *get_line()
     {
-        return m_read_buf + m_start_line;
+        return req.m_read_buf + req.m_start_line;
     }
 
     /**
@@ -245,21 +194,6 @@ private:
      * @return LINE_STATUS parsing result
      */
     LINE_STATUS parse_line();
-
-    /**
-     * @brief Unmap memory-mapped file
-     */
-    void unmap();
-
-   /* Response generation methods */
-    bool add_response(const char *format, ...);   ///< Add formatted response
-    bool add_content(const char *content);        ///< Add content to response
-    bool add_status_line(int status, const char *title); ///< Add status line
-    bool add_headers(int content_length);        ///< Add response headers
-    bool add_content_type();                     ///< Add Content-Type header
-    bool add_content_length(int content_length); ///< Add Content-Length header
-    bool add_linger();                          ///< Add Connection header
-    bool add_blank_line();                      ///< Add CRLF to response
 };
 
 #endif

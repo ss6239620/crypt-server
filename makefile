@@ -16,7 +16,7 @@ INCLUDES = -I. \
            -I./webserver \
            -I./threadpool \
            -I./lock \
-           -I./config
+           -I./config 
 
 # Library paths and flags
 LDFLAGS = -lpthread -lmysqlclient
@@ -25,6 +25,7 @@ LDFLAGS = -lpthread -lmysqlclient
 SRCS = main.cpp \
        ./timer/timer.cpp \
        ./http/http_connection.cpp \
+       ./http/http_types.cpp \
        ./log/log.cpp \
        ./cgi_mysql/connection_pool.cpp \
        ./webserver/webserver.cpp \

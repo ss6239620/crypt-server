@@ -85,7 +85,6 @@ void WEBSERVER::sql_pool()
     m_connpool = DB_CONNECTION_POOL::get_instance();
     m_connpool->init("sql12.freesqldatabase.com", m_user, m_password, m_dbname, 3306, m_sql_num, m_close_log);
     // store the username and password in hashmap
-    users->initmysql_result(m_connpool);
 }
 
 void WEBSERVER::thread_pool()
