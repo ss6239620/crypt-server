@@ -27,6 +27,7 @@
 #include "../timer/timer.h"
 #include "../log/log.h"
 #include "http_types.h"
+#include "http_routes.h"
 
 /**
  * @class HTTP_CONN
@@ -105,7 +106,7 @@ public:
      * @param password Database password
      * @param sqlname Database name
      */
-    void init(int sockfd, const sockaddr_in &addr, char *, int, int, string user, string password, string sqlname);
+    void init(int sockfd, const sockaddr_in &addr, int, int, string user, string password, string sqlname);
 
     /**
      * @brief Close connection
@@ -165,9 +166,11 @@ private:
     HttpRequest req;
     HttpResponse res;
 
+    ROUTER &router = ROUTER::get_instance(); // route instance
+
 private:
     /*Private Function*/
-    
+
     void init(); ///< Internal initialization
 
     /**

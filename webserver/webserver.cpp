@@ -3,15 +3,6 @@
 WEBSERVER::WEBSERVER()
 {
     users = new HTTP_CONN[MAX_FD];
-
-    // find server path and store it to sting and add /root at last of string and then store it to m_root
-    char server_path[200];
-    getcwd(server_path, 200);
-    char root[6] = "/root";
-    m_root = (char *)malloc(strlen(server_path) + strlen(root) + 1);
-    strcpy(m_root, server_path);
-    strcat(m_root, root);
-
     users_timer = new client_data[MAX_FD];
 }
 
@@ -177,7 +168,7 @@ void WEBSERVER::event_listen()
 
 void WEBSERVER::timer(int connfd, struct sockaddr_in client_address)
 {
-    users[connfd].init(connfd, client_address, m_root, m_conn_trigger_mode, m_close_log, m_user, m_password, m_dbname); // intialize new connection
+    users[connfd].init(connfd, client_address, m_conn_trigger_mode, m_close_log, m_user, m_password, m_dbname); // intialize new connection
 
     users_timer[connfd].address = client_address;
     users_timer[connfd].sockfd = connfd;

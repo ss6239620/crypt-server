@@ -1,5 +1,7 @@
 #include "config/config.h"
 #include "http/http_routes.h"
+#include <string>
+
 int main(int argc, char *argv[])
 {
     string user = "sql12770026";
@@ -8,6 +10,8 @@ int main(int argc, char *argv[])
 
     ROUTER &router = ROUTER::get_instance();
 
+    router.make_static("/root");
+
     // Register routes
     router.get("/", [](const HttpRequest &req, HttpResponse &res)
                { res.send(200, "Hello from root!"); });
@@ -15,8 +19,9 @@ int main(int argc, char *argv[])
     router.get("/about", [](const HttpRequest &req, HttpResponse &res)
                { res.send(200, "About page"); });
 
-    router.post("/login", [](const HttpRequest &req, HttpResponse &res)
-                { res.send(200, "Login endpoint"); });
+    router.post("/login", [](const HttpRequest &req, HttpResponse &res){
+        res.send(200,"kaisa hai bhai");
+    });
 
     router.get("/contact", [](const HttpRequest &req, HttpResponse &res)
                { res.render(200, "/video.html"); });

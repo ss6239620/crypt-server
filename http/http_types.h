@@ -10,6 +10,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+#include "./jsonparser.h"
 #include "../log/log.h"
 
 static const int FILENAME_LEN = 200;       ///< Maximum length for file paths
@@ -52,6 +53,8 @@ public:
     long m_content_length;             ///< Content length
     bool m_linger;                     ///< Keep-alive flag
     int m_sockfd;                      ///< Client socket descriptor
+
+    JSON m_body;
 
     // Add more request properties as needed...
 

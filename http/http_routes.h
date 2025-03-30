@@ -18,11 +18,11 @@ class ROUTER
 private:
     // Private constructor for singleton
     ROUTER() = default;
-
     // Map to store routes: key = "METHOD:URL", value = handler function
     unordered_map<string, RouteHandler> routes;
-
     LOCKER routes_locker; ///< Mutex for thread safety
+    std::string doc_root;
+    bool static_files = false;
 
 public:
     // Delete copy constructor and assignment operator
@@ -35,6 +35,27 @@ public:
         static ROUTER instance;
         return instance;
     }
+
+    void make_static(std::string root)
+    {
+        // find server path and store it to sting and add /root at last of string and then store it to m_root
+        char server_path[200];
+        getcwd(server_path, 200);
+        doc_root = server_path + root;
+
+        static_files = true;
+    }
+
+    bool isStatic()
+    {
+        return static_files;
+    }
+
+    char *root_path()
+    {
+        return doc_root.data();
+    }
+
     // Add route to the map
     void add_route(const METHOD &method, const string &path, RouteHandler handler)
     {
@@ -58,7 +79,7 @@ public:
             handler(req, res);
             return;
         }
-        else if (res.render(202,req.m_url))
+        else if (res.render(202, req.m_url))
         {
             routes_locker.unlock();
             return;

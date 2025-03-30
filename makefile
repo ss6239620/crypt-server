@@ -26,6 +26,7 @@ SRCS = main.cpp \
        ./timer/timer.cpp \
        ./http/http_connection.cpp \
        ./http/http_types.cpp \
+       ./http/jsonparser.cpp \
        ./log/log.cpp \
        ./cgi_mysql/connection_pool.cpp \
        ./webserver/webserver.cpp \

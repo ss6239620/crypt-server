@@ -39,7 +39,6 @@
  */
 
 #include "http_coonection.h"
-#include "http_routes.h"
 
 #include <mysql/mysql.h>
 #include <fstream>
@@ -103,7 +102,7 @@ void HTTP_CONN::close_conn(bool real_close)
     }
 }
 
-void HTTP_CONN::init(int sockfd, const sockaddr_in &addr, char *root, int trigger_mode, int close_log, string user, string password, string sqlname)
+void HTTP_CONN::init(int sockfd, const sockaddr_in &addr, int trigger_mode, int close_log, string user, string password, string sqlname)
 {
     req.m_sockfd = sockfd;
     req.m_address = addr;
@@ -111,7 +110,8 @@ void HTTP_CONN::init(int sockfd, const sockaddr_in &addr, char *root, int trigge
     addfd(m_epollfd, sockfd, true, trigger_mode);
     m_user_count++;
 
-    res.doc_root = root;
+    if (router.isStatic())
+        res.doc_root = router.root_path();
     m_trigger_mode = trigger_mode;
     m_close_log = close_log;
 
@@ -339,9 +339,8 @@ HTTP_CONN::HTTP_CODE HTTP_CONN::parse_content(char *text)
     // check if from m_check_idx + m_content_length we can react end of buffer
     if (req.m_read_idx >= (req.m_content_length + req.m_checked_idx))
     {
-        LOG_INFO("body-> %s", text);
-        text[req.m_content_length] = '\0'; // put \0 at end of body
-        res.m_string = text;
+        std::string content(text, req.m_content_length);
+        req.m_body = JSON::parse(content);
         return GET_REQUEST;
     }
     return NO_REQUEST;
@@ -455,7 +454,6 @@ void HTTP_CONN::process()
         return;
     }
 
-    ROUTER &router = ROUTER::get_instance();
     router.handleRequest(req, res);
 
     // if everything is ready tell the evernt loop to write to the socket through epoll

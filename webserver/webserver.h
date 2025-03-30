@@ -137,7 +137,6 @@ public:
 public:
     /* Configuration parameters */
     int m_port;       ///< Server listening port
-    char *m_root;     ///< Document root directory
     int m_log_write;  ///< Logging mode flag
     int m_close_log;  ///< Logging enable/disable flag
     int m_actor_mode; ///< Concurrency model (0:Proactor, 1:Reactor)
