@@ -1,0 +1,224 @@
+2025-03-30 14:27:46.345785 [info]:timer tick
+2025-03-30 14:27:46.802155 [info]:deal with the client(127.0.0.1)
+2025-03-30 14:27:46.802379 [info]:adjust timer once.
+2025-03-30 14:27:46.802498 [info]:Oops!! Unknown header: Content-Type: application/json.
+2025-03-30 14:27:46.802545 [info]:Oops!! Unknown header: User-Agent: PostmanRuntime/7.29.2.
+2025-03-30 14:27:46.802558 [info]:Oops!! Unknown header: Accept: */*.
+2025-03-30 14:27:46.802568 [info]:Oops!! Unknown header: Postman-Token: 37c3b6bb-b37a-4dc4-a656-173e26aaa296.
+2025-03-30 14:27:46.802578 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br.
+2025-03-30 14:27:46.802729 [info]:request: HTTP/1.1 200 OK
+
+2025-03-30 14:27:46.802815 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+
+2025-03-30 14:27:46.802846 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+
+2025-03-30 14:27:46.802858 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+2025-03-30 14:27:46.802868 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+
+2025-03-30 14:27:46.802877 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:27:46.802893 [info]:Response: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:27:46.803183 [info]:send data to the client(127.0.0.1)
+2025-03-30 14:27:46.803279 [info]:adjust timer once.
+2025-03-30 14:27:51.348788 [info]:timer tick
+2025-03-30 14:27:56.348943 [info]:timer tick
+2025-03-30 14:33:39.649257 [info]:deal with the client(127.0.0.1)
+2025-03-30 14:33:39.649485 [info]:adjust timer once.
+2025-03-30 14:33:39.649622 [info]:Oops!! Unknown header: Content-Type: application/json.
+2025-03-30 14:33:39.649668 [info]:Oops!! Unknown header: User-Agent: PostmanRuntime/7.29.2.
+2025-03-30 14:33:39.649681 [info]:Oops!! Unknown header: Accept: */*.
+2025-03-30 14:33:39.649691 [info]:Oops!! Unknown header: Postman-Token: 10da5e9c-a511-4eb0-a4f2-1c581b72049f.
+2025-03-30 14:33:39.649702 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br.
+2025-03-30 14:33:39.650090 [info]:request: HTTP/1.1 200 OK
+
+2025-03-30 14:33:39.650171 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+
+2025-03-30 14:33:39.650202 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+
+2025-03-30 14:33:39.650214 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+2025-03-30 14:33:39.650224 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+
+2025-03-30 14:33:39.650233 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:33:39.650243 [info]:Response: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:33:39.650471 [info]:send data to the client(127.0.0.1)
+2025-03-30 14:33:39.650570 [info]:adjust timer once.
+2025-03-30 14:33:41.212015 [info]:timer tick
+2025-03-30 14:33:46.218647 [info]:timer tick
+2025-03-30 14:36:00.585046 [info]:deal with the client(127.0.0.1)
+2025-03-30 14:36:00.585271 [info]:adjust timer once.
+2025-03-30 14:36:00.585383 [info]:Oops!! Unknown header: Content-Type: application/json.
+2025-03-30 14:36:00.585433 [info]:Oops!! Unknown header: User-Agent: PostmanRuntime/7.29.2.
+2025-03-30 14:36:00.585496 [info]:Oops!! Unknown header: Accept: */*.
+2025-03-30 14:36:00.585514 [info]:Oops!! Unknown header: Postman-Token: 417eb00d-7a2a-44ff-b747-5b9c593dd1a8.
+2025-03-30 14:36:00.585529 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br.
+2025-03-30 14:36:00.586030 [info]:request: HTTP/1.1 200 OK
+
+2025-03-30 14:36:00.586114 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+
+2025-03-30 14:36:00.586151 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+
+2025-03-30 14:36:00.586169 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+2025-03-30 14:36:00.586209 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+
+2025-03-30 14:36:00.586226 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:36:00.586241 [info]:Response: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:36:00.586512 [info]:send data to the client(127.0.0.1)
+2025-03-30 14:36:00.586638 [info]:adjust timer once.
+2025-03-30 14:36:01.127983 [info]:timer tick
+2025-03-30 14:36:06.128354 [info]:timer tick
+2025-03-30 14:36:11.128565 [info]:timer tick
+2025-03-30 14:36:16.129044 [info]:timer tick
+2025-03-30 14:36:21.129411 [info]:timer tick
+2025-03-30 14:49:07.078291 [info]:timer tick
+2025-03-30 14:49:12.078470 [info]:timer tick
+2025-03-30 14:49:17.078698 [info]:timer tick
+2025-03-30 14:49:22.078825 [info]:timer tick
+2025-03-30 14:49:27.079225 [info]:timer tick
+2025-03-30 14:49:28.082167 [info]:deal with the client(127.0.0.1)
+2025-03-30 14:49:28.082435 [info]:adjust timer once.
+2025-03-30 14:49:28.082657 [info]:Oops!! Unknown header: Content-Type: application/json.
+2025-03-30 14:49:28.082736 [info]:Oops!! Unknown header: User-Agent: PostmanRuntime/7.29.2.
+2025-03-30 14:49:28.082763 [info]:Oops!! Unknown header: Accept: */*.
+2025-03-30 14:49:28.082786 [info]:Oops!! Unknown header: Postman-Token: 2b07cb16-c59e-4d8b-9cdc-273b8b598dd4.
+2025-03-30 14:49:28.082806 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br.
+2025-03-30 14:49:28.083262 [info]:request: HTTP/1.1 200 OK
+
+2025-03-30 14:49:28.083400 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+
+2025-03-30 14:49:28.083469 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+
+2025-03-30 14:49:28.083494 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+2025-03-30 14:49:28.083515 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+
+2025-03-30 14:49:28.083535 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:49:28.083555 [info]:Response: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:14
+Connection:keep-alive
+
+kaisa hai bhai
+2025-03-30 14:49:28.083877 [info]:send data to the client(127.0.0.1)
+2025-03-30 14:49:28.084009 [info]:adjust timer once.
+2025-03-30 14:49:32.079761 [info]:timer tick
+2025-03-30 14:58:17.181673 [info]:timer tick
+2025-03-30 14:58:18.295645 [info]:deal with the client(127.0.0.1)
+2025-03-30 14:58:18.295843 [info]:adjust timer once.
+2025-03-30 14:58:18.295964 [info]:Oops!! Unknown header: Content-Type: application/json.
+2025-03-30 14:58:18.296018 [info]:Oops!! Unknown header: User-Agent: PostmanRuntime/7.29.2.
+2025-03-30 14:58:18.296042 [info]:Oops!! Unknown header: Accept: */*.
+2025-03-30 14:58:18.296054 [info]:Oops!! Unknown header: Postman-Token: b8577bab-27bb-470c-9a29-fcc8b58761ae.
+2025-03-30 14:58:18.296064 [info]:Oops!! Unknown header: Accept-Encoding: gzip, deflate, br.
+2025-03-30 14:58:18.296390 [info]:request: HTTP/1.1 200 OK
+
+2025-03-30 14:58:18.296494 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+
+2025-03-30 14:58:18.296532 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:26
+
+2025-03-30 14:58:18.296550 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:26
+Connection:keep-alive
+
+2025-03-30 14:58:18.296567 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:26
+Connection:keep-alive
+
+
+2025-03-30 14:58:18.296584 [info]:request: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:26
+Connection:keep-alive
+
+kaisa mai thik hu hai bhai
+2025-03-30 14:58:18.296600 [info]:Response: HTTP/1.1 200 OK
+Content-Type:text/plain
+Content-Length:26
+Connection:keep-alive
+
+kaisa mai thik hu hai bhai
+2025-03-30 14:58:18.296838 [info]:send data to the client(127.0.0.1)
+2025-03-30 14:58:18.297037 [info]:adjust timer once.
+2025-03-30 14:58:22.181987 [info]:timer tick
+2025-03-30 14:58:27.182209 [info]:timer tick

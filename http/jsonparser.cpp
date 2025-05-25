@@ -201,30 +201,46 @@ JSONNode parseObject(const std::string &s, int start, int end, std::unordered_ma
     return ans;
 }
 
+// Example fix for parseArray to handle nested elements:
 JSONNode parseArray(const std::string &s, int start, int end, std::unordered_map<int, int> &bracePair)
 {
-    int i = start;
-    JSONNode ans(JSONType::ARRAY); // when array automatically activate d_array
-    i++;
+    int i = start + 1; // Skip '['
+    JSONNode ans(JSONType::ARRAY);
 
     while (i < end)
     {
-        while (isWhiteSpace(s[i]))
+        while (i < end && isWhiteSpace(s[i]))
             i++;
+        if (i >= end)
+            break;
 
-        std::string value = "";
-        // stop when you see a comma or reach end of the array.
-        while (i < end && s[i] != ',')
+        if (s[i] == '{' || s[i] == '[')
         {
-            value += s[i];
-            i++;
+            int closingIndex = bracePair[i];
+            if (s[i] == '{')
+            {
+                ans.appendArray(parseObject(s, i, closingIndex, bracePair));
+            }
+            else
+            {
+                ans.appendArray(parseArray(s, i, closingIndex, bracePair));
+            }
+            i = closingIndex + 1;
         }
-        i++;
-        ans.appendArray(getValue(value));
+        else
+        {
+            int valueStart = i;
+            while (i < end && s[i] != ',')
+                i++;
+            std::string valueStr = s.substr(valueStart, i - valueStart);
+            ans.appendArray(getValue(valueStr));
+            i++; // Skip ','
+        }
+        while (i < end && isWhiteSpace(s[i]))
+            i++;
     }
     return ans;
 }
-
 std::string JSONNode::stringify(const JSONNode &node)
 {
     switch (node.d_type)
