@@ -3,7 +3,7 @@
 #include <functional>
 #include <string>
 
-#include "../lock/locker.h"
+#include "lock/locker.h"
 // Forward declaration
 class HttpRequest;
 class HttpResponse;

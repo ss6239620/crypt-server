@@ -3,6 +3,8 @@
 .env
 credential.txt
 server
+build/
+logs/
 *ServerLog*
 Dockerfile
 docker-compose.yml

@@ -24,7 +24,7 @@ RUN apt-get update \
 
 WORKDIR /app
 
-COPY --from=build /app/server ./server
+COPY --from=build /app/build/server ./server
 COPY --from=build /app/root ./root
 
 ENV DB_HOST=db \
