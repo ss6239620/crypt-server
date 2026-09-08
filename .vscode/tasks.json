@@ -14,7 +14,7 @@
         {
             "label": "Build and Run",
             "type": "shell",
-            "command": "make && ./server",
+            "command": "make && ./build/server",
             "group": {
                 "kind": "build",
                 "isDefault": false
@@ -24,7 +24,7 @@
         {
             "label": "Hot Reload",
             "type": "shell",
-            "command": "ls *.cpp */*.cpp | entr -r sh -c 'make && ./server'",
+            "command": "find src include -type f | entr -r sh -c 'make && ./build/server'",
             "problemMatcher": [],
             "isBackground": true
         },

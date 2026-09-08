@@ -1,3 +1,6 @@
-./credential.txt
+credential.txt
 /.env
-./server
+server
+build/
+logs/
+*ServerLog*

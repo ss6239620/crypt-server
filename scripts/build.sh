@@ -1,1 +1,1 @@
-make server
+make
