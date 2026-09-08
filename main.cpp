@@ -1,12 +1,31 @@
 #include "config/config.h"
 #include "http/http_routes.h"
+#include <cstdlib>
+#include <iostream>
 #include <string>
+
+namespace
+{
+string env_or_default(const char *name, const char *fallback)
+{
+    const char *value = getenv(name);
+    return (value && value[0] != '\0') ? string(value) : string(fallback);
+}
+
+int env_int_or_default(const char *name, int fallback)
+{
+    const char *value = getenv(name);
+    return (value && value[0] != '\0') ? atoi(value) : fallback;
+}
+}
 
 int main(int argc, char *argv[])
 {
-    string user = "sql12770026";
-    string password = "BgQNaiI2Rb";
-    string db_name = "sql12770026";
+    string db_host = env_or_default("DB_HOST", "127.0.0.1");
+    int db_port = env_int_or_default("DB_PORT", 3306);
+    string user = env_or_default("DB_USER", "crypt_user");
+    string password = env_or_default("DB_PASSWORD", "crypt_password");
+    string db_name = env_or_default("DB_NAME", "crypt_server");
 
     ROUTER &router = ROUTER::get_instance();
 
@@ -31,7 +50,7 @@ int main(int argc, char *argv[])
 
     WEBSERVER server;
 
-    server.init(config.port, user, password, db_name, config.log_write, config.opt_linger, config.trigger_mode, config.sql_num, config.thread_num, config.close_log, config.actor_model);
+    server.init(config.port, db_host, db_port, user, password, db_name, config.log_write, config.opt_linger, config.trigger_mode, config.sql_num, config.thread_num, config.close_log, config.actor_model);
 
     server.log_write();
 

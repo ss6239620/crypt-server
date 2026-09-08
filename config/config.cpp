@@ -26,7 +26,7 @@ void CONFIG::parse_arg(int argc, char *argv[])
 {
     int opt;
     const char *str = "p:l:m:o:s:t:c:a:";
-    while (opt = getopt(argc, argv, str) != -1)
+    while ((opt = getopt(argc, argv, str)) != -1)
     {
         switch (opt)
         {

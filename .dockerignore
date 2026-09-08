@@ -1,0 +1,8 @@
+.git
+.vscode
+.env
+credential.txt
+server
+*ServerLog*
+Dockerfile
+docker-compose.yml

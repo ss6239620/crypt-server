@@ -1,0 +1,36 @@
+services:
+  app:
+    build: .
+    image: crypt-server:local
+    command: ["./server", "-p", "9906", "-s", "8", "-t", "8"]
+    environment:
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_USER: ${DB_USER:-crypt_user}
+      DB_PASSWORD: ${DB_PASSWORD:-crypt_password}
+      DB_NAME: ${DB_NAME:-crypt_server}
+    ports:
+      - "${APP_PORT:-9906}:9906"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.4
+    environment:
+      MYSQL_DATABASE: ${DB_NAME:-crypt_server}
+      MYSQL_USER: ${DB_USER:-crypt_user}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-crypt_password}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-crypt_root_password}
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/01-init.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h localhost -uroot -p$${MYSQL_ROOT_PASSWORD} --silent"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+      start_period: 20s
+
+volumes:
+  mysql-data:

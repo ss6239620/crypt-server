@@ -82,7 +82,7 @@ public:
      * @param close_log Disable logging if non-zero
      * @param actor_model 0: Proactor, 1: Reactor
      */
-    void init(int port, string user, string password, string dbname, int log_write, int opt_linger, int trigger_mode, int sql_num, int thread_num, int close_log, int actor_model);
+    void init(int port, string db_host, int db_port, string user, string password, string dbname, int log_write, int opt_linger, int trigger_mode, int sql_num, int thread_num, int close_log, int actor_model);
 
     ///< Initialize thread pool
     void thread_pool();
@@ -148,6 +148,8 @@ public:
 
     /* Database */
     DB_CONNECTION_POOL *m_connpool; ///< Database connection pool
+    string m_db_host;               ///< Database server host
+    int m_db_port;                  ///< Database server port
     string m_user;                  ///< Database username
     string m_password;              ///< Database password
     string m_dbname;                ///< Database name

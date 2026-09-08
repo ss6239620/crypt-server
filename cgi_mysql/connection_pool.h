@@ -75,7 +75,7 @@ public:
 
 public:
     string m_url;      ///< Database server host
-    string m_port;     ///< Database server port
+    int m_port;        ///< Database server port
     string m_user;     ///< Database username
     string m_password; ///< Database password
     string m_db_name;  ///< Database name

@@ -79,7 +79,7 @@ public:
             handler(req, res);
             return;
         }
-        else if (res.render(202, req.m_url))
+        else if (res.render(200, req.m_url))
         {
             routes_locker.unlock();
             return;

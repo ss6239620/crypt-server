@@ -73,6 +73,48 @@ To remove the executable:
 make clean
 ```
 
+## Docker
+
+This repo can run as a Docker Compose stack with the C++ server plus MySQL.
+
+Build the app image:
+
+```bash
+docker compose build
+```
+
+Start the full stack:
+
+```bash
+docker compose up -d
+```
+
+Open the server:
+
+```text
+http://localhost:9906/
+```
+
+View app logs:
+
+```bash
+docker compose logs -f app
+```
+
+Stop the stack:
+
+```bash
+docker compose down
+```
+
+To customize the host port or database credentials:
+
+```bash
+cp .env.example .env
+```
+
+Then edit `.env` and restart with `docker compose up -d --build`.
+
 ## Run
 
 ```bash
@@ -114,6 +156,16 @@ Example:
 ./server -p 8080 -t 16 -s 8 -l 1 -m 3
 ```
 
+Database configuration can also be provided with environment variables:
+
+```text
+DB_HOST       MySQL host, default 127.0.0.1
+DB_PORT       MySQL port, default 3306
+DB_USER       MySQL username, default crypt_user
+DB_PASSWORD   MySQL password, default crypt_password
+DB_NAME       MySQL database, default crypt_server
+```
+
 ## Example Routes
 
 The sample routes are registered in `main.cpp`:
@@ -145,6 +197,6 @@ The script sends basic `GET`, `POST`, error-path, and keep-alive requests to `lo
 
 ## Notes
 
-- The current `main.cpp` contains sample database credentials and a fixed MySQL host. Move these values into environment variables or a local config file before using the server outside a private development environment.
+- Database connection settings are read from environment variables. The Docker Compose defaults are for local development only.
 - The HTML files include login/register forms, and the codebase contains MySQL connection-pool plumbing, but the current route setup is mainly a server demo rather than a complete authentication application.
 - Because the networking layer depends on `epoll`, this project is not portable to Windows or macOS without replacing the event backend.

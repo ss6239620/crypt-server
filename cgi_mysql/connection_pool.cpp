@@ -37,7 +37,7 @@ void DB_CONNECTION_POOL::init(string url, string user, string password, string d
     m_user = user;
     m_password = password;
     m_db_name = db_name;
-    m_close_log = m_close_log;
+    m_close_log = close_log;
 
     for (int i = 0; i < max_conn; i++)
     {

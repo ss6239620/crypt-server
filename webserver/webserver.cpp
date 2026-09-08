@@ -17,9 +17,11 @@ WEBSERVER::~WEBSERVER()
     delete m_pool;
 }
 
-void WEBSERVER::init(int port, string user, string password, string dbname, int log_write, int opt_linger, int trigger_mode, int sql_num, int thread_num, int close_log, int actor_model)
+void WEBSERVER::init(int port, string db_host, int db_port, string user, string password, string dbname, int log_write, int opt_linger, int trigger_mode, int sql_num, int thread_num, int close_log, int actor_model)
 {
     m_port = port;
+    m_db_host = db_host;
+    m_db_port = db_port;
     m_user = user;
     m_password = password,
     m_dbname = dbname;
@@ -74,7 +76,7 @@ void WEBSERVER::log_write()
 void WEBSERVER::sql_pool()
 {
     m_connpool = DB_CONNECTION_POOL::get_instance();
-    m_connpool->init("sql12.freesqldatabase.com", m_user, m_password, m_dbname, 3306, m_sql_num, m_close_log);
+    m_connpool->init(m_db_host, m_user, m_password, m_dbname, m_db_port, m_sql_num, m_close_log);
     // store the username and password in hashmap
 }
 
