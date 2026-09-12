@@ -20,7 +20,8 @@ INCLUDES = -I$(INC_DIR) \
            -I$(INC_DIR)/webserver \
            -I$(INC_DIR)/threadpool \
            -I$(INC_DIR)/lock \
-           -I$(INC_DIR)/config
+           -I$(INC_DIR)/config \
+           -I${INC_DIR}/cache
 
 # Library paths and flags
 LDFLAGS = -lpthread -lmysqlclient
@@ -34,7 +35,9 @@ SRCS = $(SRC_DIR)/main.cpp \
        $(SRC_DIR)/log/log.cpp \
        $(SRC_DIR)/cgi_mysql/connection_pool.cpp \
        $(SRC_DIR)/webserver/webserver.cpp \
-       $(SRC_DIR)/config/config.cpp
+       $(SRC_DIR)/config/config.cpp \
+       $(SRC_DIR)/cache/cache.cpp \
+       $(SRC_DIR)/cache/memory_buffer_cache.cpp 
 
 # Output executable
 TARGET = $(BUILD_DIR)/server
