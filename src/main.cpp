@@ -45,6 +45,20 @@ int main(int argc, char *argv[])
     router.get("/contact", [](const HttpRequest &req, HttpResponse &res)
                { res.render(200, "/video.html"); });
 
+    router.post("/login", [](const HttpRequest &req, HttpResponse &res) {
+    MYSQL *mysql = NULL;
+    CONNECTION_POOL_RAII mysqlcon(&mysql, DB_CONNECTION_POOL::get_instance());
+
+    if (mysql == NULL) {
+        res.send(503, "Database busy");
+        return;
+    }
+
+    // mysql_query(mysql, ...)
+
+    res.send(200, "login ok");
+});
+
     CONFIG config;
     config.parse_arg(argc, argv);
 

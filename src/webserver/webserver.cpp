@@ -125,7 +125,7 @@ void WEBSERVER::event_listen()
     1) The socket file descriptor m_listenfd that has been created and bound to an address using bind().
     2) The maximum number of pending connections that can be queued before accept() is called.
     */
-    ret = listen(m_listenfd, 5);
+    ret = listen(m_listenfd, SOMAXCONN); // SOMAXCONN is the maximum number of connections that can be queued for acceptance. It is defined in <sys/socket.h> and is typically set to a system-defined value (often 128 or 256). It represents the maximum length of the queue of pending connections.
     assert(ret >= 0);
 
     utils.init(TIMESLOT); // set the timeslot
@@ -228,7 +228,7 @@ bool WEBSERVER::deal_client_data()
         while (1)
         {
             // accept the new client connection and get their fd
-            int connfd = accept(m_listenfd, (struct sockaddr *)&client_address, &client_addrlen);
+            int connfd = accept4(m_listenfd, (struct sockaddr *)&client_address, &client_addrlen, SOCK_NONBLOCK | SOCK_CLOEXEC); // accept4 is used to make the new connection non_blocking and close on exec
             if (connfd < 0)
             {
                 LOG_ERROR("%s:errno is:%d", "accept error", errno);
@@ -306,7 +306,9 @@ void WEBSERVER::deal_with_read(int sockfd)
             adjust_timer(timer); // adjust timer
 
         // we can find current client connfd by moving in array. Append the new work to the worker queue  for worker thread to consume.
-        m_pool->append(users + sockfd, 0);
+        if(!m_pool->append(users + sockfd, 0)){
+            utils.show_error(sockfd, "Server busy");
+        }
 
         while (true) // wait till a worker thread consumed client data.
         {
@@ -331,7 +333,10 @@ void WEBSERVER::deal_with_read(int sockfd)
             // cleint ip
             LOG_INFO("deal with the client(%s)", inet_ntoa(users[sockfd].get_address()->sin_addr));
 
-            m_pool->append_p(users + sockfd); // append to proactor mode
+            if(!m_pool->append_p(users + sockfd)) // append to proactor mode
+            {
+               utils.show_error(sockfd, "Server busy");
+            }
 
             if (timer) // adjust expiration time
                 adjust_timer(timer);
@@ -352,7 +357,10 @@ void WEBSERVER::deal_with_write(int sockfd)
             adjust_timer(timer);
 
         // we can find current client connfd by moving in array. Append the new work to the worker queue  for worker thread to consume.
-        m_pool->append(users + sockfd, 1); // 1 for write
+        if(!m_pool->append(users + sockfd, 1)) // 1 for write
+        {
+            utils.show_error(sockfd, "Server busy");
+        }
 
         while (true) // wait till a worker thread consumed client data.
         {
