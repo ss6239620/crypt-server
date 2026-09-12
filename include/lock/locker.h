@@ -1,5 +1,4 @@
-#ifndef LOCKER_H
-#define LOCKER_H
+#pragma once
 
 #include <exception>
 #include <pthread.h>
@@ -190,5 +189,3 @@ public:
         return pthread_cond_broadcast(&m_cond);
     }
 };
-
-#endif

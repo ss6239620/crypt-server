@@ -1,14 +1,15 @@
-#ifndef _ROUTES_H_
-#define _ROUTES_H_
+#pragma once
 
 #include <unordered_map>
 #include <functional>
 #include <string>
 #include <iostream>
+#include <unistd.h>
 
-#include "../lock/locker.h"
-#include "../log/log.h"
-#include "http_types.h"
+#include "log/log.h"
+#include "http_constants.h"
+#include "http_request.h"
+#include "http_response.h"
 
 // Alias for handler function type
 using RouteHandler = function<void(const HttpRequest &, HttpResponse &)>;
@@ -24,7 +25,6 @@ private:
     unordered_map<string, RouteHandler> put_routes;
     unordered_map<string, RouteHandler> delete_routes;
 
-    LOCKER routes_locker; ///< Mutex for thread safety
     std::string doc_root;
     bool static_files = false;
 
@@ -42,22 +42,26 @@ public:
 
     void make_static(std::string root)
     {
-        // find server path and store it to sting and add /root at last of string and then store it to m_root
-        char server_path[200];
-        getcwd(server_path, 200);
+        // getcwd() gives the process working directory; appending /root creates the static file base path.
+        char server_path[1024];
+        if (getcwd(server_path, sizeof(server_path)) == nullptr)
+        {
+            LOG_ERROR("%s", "Failed to resolve static root path");
+            return;
+        }
         doc_root = server_path + root;
 
         static_files = true;
     }
 
-    bool isStatic()
+    bool isStatic() const
     {
         return static_files;
     }
 
-    char *root_path()
+    const std::string &root_path() const
     {
-        return doc_root.data();
+        return doc_root;
     }
 
     // Add route to the map
@@ -69,25 +73,26 @@ public:
             LOG_ERROR("Invalid HTTP method for route: %s", path.c_str());
             return;
         }
-        routes_locker.lock();
+
+        // Routes are registered during startup before worker threads accept traffic.
         (*routes)[path] = handler;
-        routes_locker.unlock();
     }
     // Handle incoming request
     void handleRequest(const HttpRequest &req, HttpResponse &res)
     {
-        auto *routes = route_table(req.m_method);
+        auto *routes = route_table(req.method_type);
         if (routes)
         {
-            auto it = routes->find(req.m_url);
+            auto it = routes->find(req.path);
             if (it != routes->end())
             {
-                RouteHandler handler = it->second;
-                handler(req, res);
+                it->second(req, res);
                 return;
             }
         }
-        if (res.render(200, req.m_url))
+
+        // Static fallback is GET-only; POST /missing should be a route miss, not a file lookup.
+        if (req.method_type == GET && res.render(200, req.path))
             return;
 
         res.send(404, "404 not found");
@@ -127,5 +132,3 @@ public:
         }
     }
 };
-
-#endif
