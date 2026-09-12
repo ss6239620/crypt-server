@@ -30,7 +30,10 @@ LDFLAGS = -lpthread -lmysqlclient
 SRCS = $(SRC_DIR)/main.cpp \
        $(SRC_DIR)/timer/timer.cpp \
        $(SRC_DIR)/http/http_connection.cpp \
-       $(SRC_DIR)/http/http_types.cpp \
+       $(SRC_DIR)/http/http_request.cpp \
+       $(SRC_DIR)/http/http_request_parser.cpp \
+       $(SRC_DIR)/http/http_response.cpp \
+       $(SRC_DIR)/http/http_socket_utils.cpp \
        $(SRC_DIR)/http/jsonparser.cpp \
        $(SRC_DIR)/log/log.cpp \
        $(SRC_DIR)/cgi_mysql/connection_pool.cpp \
@@ -41,6 +44,7 @@ SRCS = $(SRC_DIR)/main.cpp \
 
 # Output executable
 TARGET = $(BUILD_DIR)/server
+HTTP_TEST_TARGET = $(BUILD_DIR)/http_parser_response_test
 
 all: $(TARGET)
 
@@ -48,7 +52,19 @@ $(TARGET): $(SRCS)
 	mkdir -p $(BUILD_DIR)
 	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^ $(LDFLAGS)
 
+$(HTTP_TEST_TARGET): tests/http_parser_response_test.cpp \
+                     $(SRC_DIR)/http/http_request.cpp \
+                     $(SRC_DIR)/http/http_request_parser.cpp \
+                     $(SRC_DIR)/http/http_response.cpp \
+                     $(SRC_DIR)/http/jsonparser.cpp \
+                     $(SRC_DIR)/log/log.cpp
+	mkdir -p $(BUILD_DIR)
+	$(CXX) $(CXXFLAGS) $(INCLUDES) -o $@ $^ -lpthread
+
+test-http: $(HTTP_TEST_TARGET)
+	$(HTTP_TEST_TARGET)
+
 clean:
 	rm -rf $(BUILD_DIR)
 
-.PHONY: all clean
+.PHONY: all clean test-http

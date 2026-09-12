@@ -24,8 +24,8 @@
  * - Automatically schedules the next alarm with alarm(m_timeslot).
  */
 
-#include "timer.h"
-#include "../http/http_coonection.h"
+#include "timer/timer.h"
+#include "http/http_connection.h"
 
 SORT_TIMER_lST::SORT_TIMER_lST()
 {

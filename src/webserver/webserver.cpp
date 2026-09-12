@@ -222,7 +222,7 @@ bool WEBSERVER::deal_client_data()
         // add new connection to timer for monitoring
         timer(connfd, client_address);
     }
-    // listen mode in ET we have to accept all the client that are eaiting for us
+    // listen mode in ET we have to accept all the client that are waiting for us
     else
     {
         while (1)
@@ -243,8 +243,6 @@ bool WEBSERVER::deal_client_data()
             timer(connfd, client_address);
             // accepted = true;  // A client was accepted successfully
         }
-        // return accepted;
-        return false;
     }
     return true;
 }
@@ -414,11 +412,11 @@ void WEBSERVER::event_loop()
             int sockfd = events[i].data.fd; // take out individual event fd
 
             // if server epoll instance has some event likely arrival of new connection handle it.
+            //ET must keep calling accept4() until EAGAIN/EWOULDBLOCK, while LT can accept one connection per event. The true/false return value here is just this program's own control-flow convention.
             if (sockfd == m_listenfd)
             {
-                bool flag = deal_client_data();
-                if (flag == false)
-                    continue;
+                deal_client_data();
+                continue;
             }
             /*
             This condition happen when the client drop the connection or some error occured on epoll fd

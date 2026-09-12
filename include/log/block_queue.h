@@ -1,11 +1,10 @@
-#ifndef BLOCK_QUEUE_H
-#define BLOCK_QUEUE_H
+#pragma once
 
 #include <iostream>
 #include <stdlib.h>
 #include <pthread.h>
 #include <sys/time.h>
-#include "../lock/locker.h"
+#include "lock/locker.h"
 
 using namespace std;
 
@@ -223,5 +222,3 @@ public:
         return true;
     }
 };
-
-#endif

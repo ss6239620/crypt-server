@@ -33,7 +33,7 @@
 #include <sys/epoll.h>
 
 #include "../threadpool/threadpool.h"
-#include "../http/http_coonection.h"
+#include "../http/http_connection.h"
 
 /**
  * @def MAX_FD

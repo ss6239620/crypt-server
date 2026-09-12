@@ -21,7 +21,7 @@
 #include <sys/wait.h>
 #include <sys/uio.h>
 #include <time.h>
-#include "../lock/locker.h"
+#include "lock/locker.h"
 
 class UTIL_TIMER;
 

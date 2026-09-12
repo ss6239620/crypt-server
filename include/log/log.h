@@ -1,5 +1,4 @@
-#ifndef LOG_H
-#define LOG_H
+#pragma once
 
 #include <stdio.h>
 #include <iostream>
@@ -7,7 +6,7 @@
 #include <cstring>
 #include <stdarg.h>
 #include <pthread.h>
-#include "./block_queue.h"
+#include "log/block_queue.h"
 
 using namespace std;
 
@@ -166,5 +165,3 @@ public:
             LOG::get_instance()->flush();                           \
         }                                                           \
     } while (0)
-
-#endif
