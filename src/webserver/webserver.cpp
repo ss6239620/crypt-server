@@ -64,13 +64,10 @@ void WEBSERVER::trigger_mode()
 
 void WEBSERVER::log_write()
 {
-    if (m_close_log == 0)
-    {
-        if (m_log_write == 1) // if log mode is asynchronous
-            LOG::get_instance()->init("./ServerLog", m_close_log, 2000, 800000, 800);
-        else
-            LOG::get_instance()->init("./ServerLog", m_close_log, 2000, 800000, 0);
-    }
+    if (m_log_write == 1) // if log mode is asynchronous
+        LOG::get_instance()->init("./ServerLog", m_close_log, 2000, 800000, 800);
+    else
+        LOG::get_instance()->init("./ServerLog", m_close_log, 2000, 800000, 0);
 }
 
 void WEBSERVER::sql_pool()

@@ -10,7 +10,7 @@ CONFIG::CONFIG()
     opt_linger = 0;          // 0 = Disable SO_LINGER (fast close)
     sql_num = 8;             // 0 = Will be set properly during init
     thread_num = 8;          // 0 = Will be auto-configured later
-    close_log = 0;           // 0 = Enable logging
+    close_log = 1;           // 0 = Enable logging
     actor_model = 0;         // 0 = Proactor pattern
 }
 

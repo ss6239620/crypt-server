@@ -14,17 +14,32 @@ using namespace std;
 
 LOG::LOG()
 {
+    dir_name[0] = '\0';
+    log_name[0] = '\0';
+    m_split_line = 0;
+    m_log_buf_size = 0;
     m_count = 0;
+    m_today = 0;
+    m_fp = NULL;
+    m_buf = NULL;
+    m_log_queue = NULL;
     m_is_async = false;
+    m_close_log = 1;
 }
 
 LOG::~LOG()
 {
     if (m_fp != NULL)
         fclose(m_fp);
+    delete[] m_buf;
+    delete m_log_queue;
 }
 bool LOG::init(const char *file_name, int close_log, int log_buf_size, int split_lines, int max_queue_size)
 {
+    m_close_log = close_log;
+    if (m_close_log != 0)
+        return true;
+
     // Asynchronous mode require setting the length of blocking queue and synchronous mode does not
     // if max_queue_size is greater than 1 we need asynchronoes writing method
     if (max_queue_size >= 1)
@@ -35,7 +50,6 @@ bool LOG::init(const char *file_name, int close_log, int log_buf_size, int split
         // create a thread to process(consumer) asynchronous log  
         pthread_create(&tid, NULL, flush_log_thread, NULL);
     }
-    m_close_log = close_log;
     m_log_buf_size = log_buf_size;
     m_buf = new char[m_log_buf_size];
     memset(m_buf, '\0', m_log_buf_size);
@@ -65,8 +79,16 @@ bool LOG::init(const char *file_name, int close_log, int log_buf_size, int split
     return true;
 }
 
+bool LOG::is_enabled() const
+{
+    return m_close_log == 0 && m_fp != NULL && m_buf != NULL;
+}
+
 void LOG::write_log(int level, const char *format, ...)
 {
+    if (!is_enabled())
+        return;
+
     struct timeval now = {0, 0};
     gettimeofday(&now, NULL);
     time_t t = now.tv_sec;
@@ -153,6 +175,9 @@ void LOG::write_log(int level, const char *format, ...)
 
 void LOG::flush(void)
 {
+    if (!is_enabled())
+        return;
+
     m_mutex.lock();
     fflush(m_fp);
     m_mutex.unlock();
