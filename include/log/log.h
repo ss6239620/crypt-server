@@ -93,6 +93,11 @@ public:
     bool init(const char *filename, int close_log, int log_buf_size = 8192, int split_lines = 5000000, int max_queue_size = 0);
 
     /**
+     * @brief Whether log writes should currently be emitted.
+     */
+    bool is_enabled() const;
+
+    /**
      * @brief Write formatted log message
      * @param level Log level (0=DEBUG,1=INFO,2=WARN, 3=ERROR)
      * @param format printf-style format string
@@ -117,46 +122,49 @@ public:
  * @brief Debug-level log (level 0)
  * @note Disabled if m_close_log != 0
  */
-#define LOG_DEBUG(format, ...)                                    \
-    if (0 == m_close_log)                                         \
-    {                                                             \
-        LOG::get_instance()->write_log(0, format, ##__VA_ARGS__); \
-        LOG::get_instance()->flush();                             \
-    }
+#define LOG_DEBUG(format, ...)                                      \
+    do                                                              \
+    {                                                               \
+        if (LOG::get_instance()->is_enabled())                      \
+            LOG::get_instance()->write_log(0, format, ##__VA_ARGS__); \
+    } while (0)
 
 /**
  * @def LOG_INFO(format, ...)
  * @brief Debug-level log (level 0)
  * @note Disabled if m_close_log != 0
  */
-#define LOG_INFO(format, ...)                                     \
-    if (0 == m_close_log)                                         \
-    {                                                             \
-        LOG::get_instance()->write_log(1, format, ##__VA_ARGS__); \
-        LOG::get_instance()->flush();                             \
-    }
+#define LOG_INFO(format, ...)                                       \
+    do                                                              \
+    {                                                               \
+        if (LOG::get_instance()->is_enabled())                      \
+            LOG::get_instance()->write_log(1, format, ##__VA_ARGS__); \
+    } while (0)
 
 /**
  * @def LOG_WARN(format, ...)
  * @brief Debug-level log (level 0)
  * @note Disabled if m_close_log != 0
  */
-#define LOG_WARN(format, ...)                                     \
-    if (0 == m_close_log)                                         \
-    {                                                             \
-        LOG::get_instance()->write_log(2, format, ##__VA_ARGS__); \
-        LOG::get_instance()->flush();                             \
-    }
+#define LOG_WARN(format, ...)                                       \
+    do                                                              \
+    {                                                               \
+        if (LOG::get_instance()->is_enabled())                      \
+            LOG::get_instance()->write_log(2, format, ##__VA_ARGS__); \
+    } while (0)
 /**
  * @def LOG_ERROR(format, ...)
  * @brief Error-level log (level 3)
  * @note Always flushes immediately
  */
-#define LOG_ERROR(format, ...)                                    \
-    if (0 == m_close_log)                                         \
-    {                                                             \
-        LOG::get_instance()->write_log(3, format, ##__VA_ARGS__); \
-        LOG::get_instance()->flush();                             \
-    }
+#define LOG_ERROR(format, ...)                                      \
+    do                                                              \
+    {                                                               \
+        if (LOG::get_instance()->is_enabled())                      \
+        {                                                           \
+            LOG::get_instance()->write_log(3, format, ##__VA_ARGS__); \
+            LOG::get_instance()->flush();                           \
+        }                                                           \
+    } while (0)
 
 #endif

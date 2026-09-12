@@ -104,6 +104,8 @@ void HTTP_CONN::close_conn(bool real_close)
 
 void HTTP_CONN::init(int sockfd, const sockaddr_in &addr, int trigger_mode, int close_log, string user, string password, string sqlname)
 {
+    (void)close_log;
+
     req.m_sockfd = sockfd;
     req.m_address = addr;
 
@@ -113,7 +115,6 @@ void HTTP_CONN::init(int sockfd, const sockaddr_in &addr, int trigger_mode, int 
     if (router.isStatic())
         res.doc_root = router.root_path();
     m_trigger_mode = trigger_mode;
-    m_close_log = close_log;
 
     // copy db creadential
     strcpy(sql_user, user.c_str());

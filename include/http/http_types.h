@@ -17,8 +17,6 @@ static const int FILENAME_LEN = 200;       ///< Maximum length for file paths
 static const int READ_BUFFER_SIZE = 2048;  ///< Size of read buffer
 static const int WRITE_BUFFER_SIZE = 1024; ///< Size of write buffer
 
-static int m_close_log;
-
 /**
  * @enum METHOD
  * @brief Supported HTTP methods
@@ -84,8 +82,6 @@ public:
     int bytes_have_send; ///< Bytes already sent
 
     bool m_linger;
-
-    int m_close_log; ///< Logging control flag
 
     sockaddr_in m_address; ///< Client address
 
