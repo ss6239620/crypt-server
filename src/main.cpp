@@ -3,20 +3,22 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include "cache/cache.h"
+#include "cache/memory_buffer_cache.h"
 
 namespace
 {
-string env_or_default(const char *name, const char *fallback)
-{
-    const char *value = getenv(name);
-    return (value && value[0] != '\0') ? string(value) : string(fallback);
-}
+    string env_or_default(const char *name, const char *fallback)
+    {
+        const char *value = getenv(name);
+        return (value && value[0] != '\0') ? string(value) : string(fallback);
+    }
 
-int env_int_or_default(const char *name, int fallback)
-{
-    const char *value = getenv(name);
-    return (value && value[0] != '\0') ? atoi(value) : fallback;
-}
+    int env_int_or_default(const char *name, int fallback)
+    {
+        const char *value = getenv(name);
+        return (value && value[0] != '\0') ? atoi(value) : fallback;
+    }
 }
 
 int main(int argc, char *argv[])
@@ -29,6 +31,9 @@ int main(int argc, char *argv[])
 
     ROUTER &router = ROUTER::get_instance();
 
+    cache::Cache::instance().set_strategy(
+        std::make_unique<cache::MemoryBufferCache>());
+
     router.make_static("/root");
 
     // Register routes
@@ -38,14 +43,14 @@ int main(int argc, char *argv[])
     router.get("/about", [](const HttpRequest &req, HttpResponse &res)
                { res.send(200, "About page"); });
 
-    router.post("/login", [](const HttpRequest &req, HttpResponse &res){
-        res.send(200,"kaisa hai bhai");
-    });
+    router.post("/login", [](const HttpRequest &req, HttpResponse &res)
+                { res.send(200, "kaisa hai bhai"); });
 
     router.get("/contact", [](const HttpRequest &req, HttpResponse &res)
                { res.render(200, "/video.html"); });
 
-    router.post("/login", [](const HttpRequest &req, HttpResponse &res) {
+    router.post("/login", [](const HttpRequest &req, HttpResponse &res)
+                {
     MYSQL *mysql = NULL;
     CONNECTION_POOL_RAII mysqlcon(&mysql, DB_CONNECTION_POOL::get_instance());
 
@@ -56,8 +61,7 @@ int main(int argc, char *argv[])
 
     // mysql_query(mysql, ...)
 
-    res.send(200, "login ok");
-});
+    res.send(200, "login ok"); });
 
     CONFIG config;
     config.parse_arg(argc, argv);
