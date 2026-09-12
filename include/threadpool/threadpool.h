@@ -101,8 +101,6 @@ private:
                     if (request->read_once()) // if true then success
                     {
                         request->improv = 1; // Mark as "processed"
-                        // acquire connection from db_pool and give attach it to request
-                        CONNECTION_POOL_RAII mysqlcon(&request->mysql, m_conn_pool);
                         // now everything is ready process the data
                         request->process();
                     }
@@ -129,7 +127,6 @@ private:
             // proactor model
             else
             {
-                CONNECTION_POOL_RAII mysqlcon(&request->mysql, m_conn_pool); // acquire db and set it for request
                 request->process();                                          // process the request we do not have to wait for read and write it will be handled internally.
             }
         }

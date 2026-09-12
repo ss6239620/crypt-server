@@ -19,7 +19,11 @@ private:
     // Private constructor for singleton
     ROUTER() = default;
     // Map to store routes: key = "METHOD:URL", value = handler function
-    unordered_map<string, RouteHandler> routes;
+    unordered_map<string, RouteHandler> get_routes;
+    unordered_map<string, RouteHandler> post_routes;
+    unordered_map<string, RouteHandler> put_routes;
+    unordered_map<string, RouteHandler> delete_routes;
+
     LOCKER routes_locker; ///< Mutex for thread safety
     std::string doc_root;
     bool static_files = false;
@@ -59,36 +63,34 @@ public:
     // Add route to the map
     void add_route(const METHOD &method, const string &path, RouteHandler handler)
     {
-        string key = find_method_str(method) + ":" + path;
+        auto *routes = route_table(method);
+        if (!routes)
+        {
+            LOG_ERROR("Invalid HTTP method for route: %s", path.c_str());
+            return;
+        }
         routes_locker.lock();
-        routes[key] = handler;
+        (*routes)[path] = handler;
         routes_locker.unlock();
     }
     // Handle incoming request
     void handleRequest(const HttpRequest &req, HttpResponse &res)
     {
-        string key = find_method_str(req.m_method) + ":" + req.m_url;
-        routes_locker.lock();
-        auto it = routes.find(key);
-        if (it != routes.end())
+        auto *routes = route_table(req.m_method);
+        if (routes)
         {
-            // Found matching route, execute handler
-            // Unlock before calling the handler to avoid holding the lock during user code
-            RouteHandler handler = it->second;
-            routes_locker.unlock();
-            handler(req, res);
+            auto it = routes->find(req.m_url);
+            if (it != routes->end())
+            {
+                RouteHandler handler = it->second;
+                handler(req, res);
+                return;
+            }
+        }
+        if (res.render(200, req.m_url))
             return;
-        }
-        else if (res.render(200, req.m_url))
-        {
-            routes_locker.unlock();
-            return;
-        }
-        else
-        {
-            routes_locker.unlock();
-            res.send(404, "404 not found");
-        }
+
+        res.send(404, "404 not found");
     }
     // Convenience methods for common HTTP methods
     void get(const string &path, RouteHandler handler)
@@ -108,47 +110,20 @@ public:
         add_route(DELETE, path, handler);
     }
 
-    string find_method_str(METHOD meth)
+    unordered_map<string, RouteHandler> *route_table(METHOD method)
     {
-        switch (meth)
+        switch (method)
         {
         case GET:
-            return "GET";
-            break;
-
+            return &get_routes;
         case POST:
-            return "POST";
-            break;
+            return &post_routes;
         case PUT:
-            return "PUT";
-            break;
-        case HEAD:
-            return "HEAD";
-            break;
-
+            return &put_routes;
         case DELETE:
-            return "DELETE";
-            break;
-
-        case TRACE:
-            return "DELETE";
-            break;
-
-        case OPTIONS:
-            return "DELETE";
-            break;
-
-        case CONNECT:
-            return "CONNECT";
-            break;
-
-        case PATH:
-            return "PATH";
-            break;
-
+            return &delete_routes;
         default:
-            return "";
-            break;
+            return nullptr;
         }
     }
 };
